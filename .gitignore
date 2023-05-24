@@ -1,2 +1,4 @@
 /target
 settings.json
+.DS_Store
+LeetCode.code-workspace

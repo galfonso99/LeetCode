@@ -27,23 +27,8 @@ use std::rc::Rc;
 use std::cell::RefCell;
 impl Solution {
     pub fn max_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-        let mut stack = vec![root];
-        while let Some(node) = stack.pop() {
-            if let Some(node) = node {
-                
-            }
-        }
-    }
-}
-// @lc code=end
-
-
-        
-        
-        
-
-
-let mut stack = vec![(root, 0)];
+        let mut max_depth = 0;
+        let mut stack = vec![(root, 0)];
         while let Some((node, mut depth)) = stack.pop() {
             if let Some(node) = node {
                 let node = node.borrow();
@@ -54,3 +39,9 @@ let mut stack = vec![(root, 0)];
                 stack.push((node.right.clone(), depth));                
             }
         }
+        max_depth
+    }
+    
+}
+// @lc code=end
+
