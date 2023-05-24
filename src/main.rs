@@ -1,39 +1,56 @@
-struct Solution;
 fn main() {}
 
-#[derive(Debug, PartialEq, Eq)]
-pub struct TreeNode {
-    pub val: i32,
-    pub left: Option<Rc<RefCell<TreeNode>>>,
-    pub right: Option<Rc<RefCell<TreeNode>>>,
-}
-
-use std::cell::RefCell;
-use std::rc::Rc;
-pub fn is_symmetric(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    let mut arr: Vec<i32> = Vec::new();
-    let node_unwrap = root.unwrap();
-    let mut node = node_unwrap.borrow_mut();
-    is_sym(node.left.take(), node.right.take())
-}
-
-
-/* 
-pub fn is_symmetric(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    let mut arr: Vec<i32> = Vec::new();
-    let node_unwrap = root.unwrap();
-    let mut node = node_unwrap.borrow_mut();
-    is_sym(node.left.take(), node.right.take())
-}
-
-pub fn is_sym(left: Option<Rc<RefCell<TreeNode>>>, right: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    let (left, right) = (left.unwrap(), right.unwrap());
-    let (mut left, mut right) = (left.borrow_mut(), right.borrow_mut());
-    if left.val != right.val {
-        return false;
-    }
-    is_sym(left.left.take(), right.right.take())
-        && is_sym(left.right.take(), right.left.take())
+pub fn reverse_bits(x: u32) -> u32 {
+    let bit_string = x.to_ne_bytes().iter().map(|b| {
+        let mut byte = *b;
+        let mut str = String::new();
+        for i in 0..=7 {
+            let sig_bit = 2u8.pow(7-i);
+            if sig_bit >= byte {
+                str.push('0');
+            } 
+            else {
+                byte -= sig_bit;
+                str.push('1');
+            }
+        }
+        str
+    }).collect::<String>().chars().rev().collect::<String>();
+    u32::from_str_radix(&bit_string, 2).unwrap_or(0)
     
+    
+    // to_string()
+    //     .chars()
+    //     .rev()
+    //     .collect::<String>()
+    //     .parse()
+    //     .unwrap()
+
+    //"vsdv".
 }
- */
+
+/*     table.iter().skip_while(|line| {
+        if line.chars().next().unwrap() == '+' {row += 1;}
+        row < coords[1][0] + 1
+    })
+    .skip(1)
+    .take_while(|line| {
+        if line.chars().next().unwrap() == '+' {row += 1;}
+        row <= coords[0][0] + 1
+    })
+}
+*/
+/*
+table.iter().map(|line| {
+    if row < coords[1][0] + 1|| row > coords[0][0] {return line}
+    if line.chars().next().unwrap() == '+' {row += 1;}
+    line.chars().map(|c| {
+        if col < coords[0][1] + 1 || col > coords[1][1] {return c;}
+        if c == '|' || c == '*' {
+            col += 1;
+        }
+        return ' ';
+
+    }).collect::<String>()
+}).collect::<Vec<String>>()
+*/

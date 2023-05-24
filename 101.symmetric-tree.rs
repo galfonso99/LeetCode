@@ -32,8 +32,6 @@ impl Solution {
         let mut node = node_unwrap.borrow_mut();
         is_sym(node.left.take(), node.right.take())
     }
-    
-    
 }
 
 pub fn is_sym(left: Option<Rc<RefCell<TreeNode>>>, right: Option<Rc<RefCell<TreeNode>>>) -> bool {
@@ -46,9 +44,9 @@ pub fn is_sym(left: Option<Rc<RefCell<TreeNode>>>, right: Option<Rc<RefCell<Tree
     let (left, right) = (left.unwrap(), right.unwrap());
     let (mut left, mut right) = (left.borrow_mut(), right.borrow_mut());
     
-    left.val == right.val && is_sym(left.left.take(), right.right.take())
+    left.val == right.val 
+        && is_sym(left.left.take(), right.right.take())
         && is_sym(left.right.take(), right.left.take())
-    
 }
 // @lc code=end
 
