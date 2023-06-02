@@ -27,20 +27,25 @@ use std::rc::Rc;
 use std::cell::RefCell;
 impl Solution {
     pub fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-        let mut arr: Vec<i32> = Vec::new();
+        let mut stack = Vec::new();
+        let mut arr = Vec::new();
         let mut node = root;
-        Solution::traverse(node, &mut arr);
-        arr
-    }
-    
-    pub fn traverse(node: Option<Rc<RefCell<TreeNode>>>, arr: &mut Vec<i32>) {
-        if node.is_none() {
-            return;
-        }
-        let mut node = node.unwrap();
-        Solution::traverse(node.borrow_mut().left.take(), arr);
-        arr.push(node.borrow_mut().val);
-        Solution::traverse(node.borrow_mut().right.take(), arr);
+        while node.is_some() || !stack.is_empty() {
+            if node.is_some() {
+                while let Some(curr) = node.clone() {
+                    stack.push(Some(curr.clone()));
+                    let mut curr = curr.borrow_mut();
+                    node = curr.left.take();
+                }
+            }
+            if !stack.is_empty() {
+                let curr = stack.pop().unwrap().unwrap();
+                let mut curr = curr.borrow_mut();
+                arr.push(curr.val);
+                node = curr.right.take();
+            }
+       }
+       arr
     }
 }
 // @lc code=end
