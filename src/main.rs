@@ -1,23 +1,19 @@
-struct Solution;
-fn main() {}
 
-impl Solution {
-    pub fn first_uniq_char(s: String) -> i32 {
-        let mut chars = [0; 27];
-        for c in s.chars() {
-            let index = c as u8 - 64;
-            chars[index as usize] += 1;
-        }
-        for (i,c) in s.chars().enumerate() {
-            let index = c as u8 - 64;
-            if chars[index as usize] == 1 {
-                return i as i32;
-            }
-        }
-        0
-    }
+
+pub fn main() {
+    use std::fs::File;
+use std::io::BufReader;
+use std::io::prelude::*;
+    // let input = "1abc2\n
+    //     pqr3stu8vwx\n
+    //     a1b2c3d4e5f\n
+    //     treb7uchet".to_string();
+    let file = File::open("input").unwrap();
+    let mut buf_reader = BufReader::new(file);
+    let mut contents = String::new();
+    buf_reader.read_to_string(&mut contents).unwrap();
+    let int_arrays = contents.lines().map(|line| line.chars().filter_map(|c| c.to_digit(10)).collect::<Vec<u32>>())
+                        .filter(|arr| !arr.is_empty()).collect::<Vec<Vec<u32>>>();
+    let sum: u32 = int_arrays.iter().map(|arr| arr[0] * 10 + arr[arr.len()-1]).sum();
+    println!("{:?}", sum);
 }
-// Precompute the input into an array where the chars are the index and the count is the value
-// Then in another loop for each value of S check if the count is higher than zero, and if not you've found
-// The unique value 
-

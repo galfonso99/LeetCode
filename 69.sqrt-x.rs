@@ -1,6 +1,5 @@
 /*
  * @lc app=leetcode id=69 lang=rust
- *
  * [69] Sqrt(x)
  */
 
