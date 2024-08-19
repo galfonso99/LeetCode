@@ -4,9 +4,13 @@
  * [1] Two Sum
  */
 
+struct Solution {
+    
+}
+
 // @lc code=start
 impl Solution {
-    pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
+    pub fn two_sum(&self, nums: Vec<i32>, target: i32) -> Vec<i32> {
         use std::collections::HashMap;
         let mut map = HashMap::new();
         let mut arr: Vec<i32> = Vec::new();
@@ -21,4 +25,8 @@ impl Solution {
     }
 }
 // @lc code=end
+pub fn run () {
+    let sol = Solution{};
+    sol.two_sum([1,2,4,5,9].to_vec(), 7);
+}
 

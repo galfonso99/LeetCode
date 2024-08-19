@@ -1,4 +1,4 @@
-int pivotInteger(int x) {
+void pivotInteger(int x) {
     if (x == 1) {return 1;}
     int arr[x];
     arr[0] = arr[x-1] = 0;

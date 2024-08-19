@@ -1,12 +1,15 @@
  // * Definition for singly-linked list.
 
- package add_two;
+ package main;
 
-  type ListNode struct {
-      Val int
-      Next *ListNode
-  }
+  // type ListNode struct {
+  //     Val int
+  //     Next *ListNode
+  // }
 
+ func main() {
+
+ }
  func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
     carry, dummy := 0, new(ListNode)
     node := dummy; 

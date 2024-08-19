@@ -3,6 +3,11 @@
  *
  * [14] Longest Common Prefix
  */
+mod longest;
+
+struct Solution {
+
+}
 
 // @lc code=start
 impl Solution {
@@ -16,4 +21,6 @@ impl Solution {
 }
 // @lc code=end
 
-// 
+pub fn main() {
+    Solution::longest_common_prefix("ass".to_string());
+}

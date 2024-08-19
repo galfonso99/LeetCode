@@ -1,4 +1,5 @@
 package main
+
  func restoreArray(pairs [] []int) []int {
    result := []int{}
    mapping := [100001][]int{}
@@ -6,12 +7,14 @@ package main
 
    for i := 0; i < len(pairs); i++ {
      pair := pairs[i]
-     append(mapping[pair[0]], pair[1]) 
-     append(mapping[pair[1]], pair[0]) 
+     mapping[pair[0]] = append(mapping[pair[0]], pair[1]) 
+     mapping[pair[1]] = append(mapping[pair[1]], pair[0]) 
 
 
    }
-   for i := 0; i < len()
+   for i := 0; i < len(pairs); i++ {
+
+    }
 
    
    return result
