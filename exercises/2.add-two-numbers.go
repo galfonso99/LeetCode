@@ -7,9 +7,6 @@
   //     Next *ListNode
   // }
 
- func main() {
-
- }
  func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
     carry, dummy := 0, new(ListNode)
     node := dummy; 

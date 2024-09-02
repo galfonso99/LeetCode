@@ -18,7 +18,7 @@ public class anagram_groups_49 {
             "slimming","daises","resisted","shanty","receivable","careering","transmigration","dooms","revisiting",
             "financed","severs","hominy","pantomiming","bestride","seam","alibi","churchman","ovule","jaxartes",
             "retirement","translated","pancaking","achiever","navigates","hazes","tubman","versatility","fergus",
-            "adjust","narcosis","hightail","mormon","hattie","chinning","teenager","tho","misbehaves","trustfulness" 
+            "adjust","narcosis","hightail","mormon","hattie","chinning","teenager","tho","misbehaves","trustfulness"
             ,"electioneers","emending","disenchanting","barometer","styluses","uruguay","houseboat","rungs","endwise"
             ,"reinterpretation","gashes","koshers","nostalgic"};
 
