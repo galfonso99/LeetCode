@@ -3,10 +3,6 @@ package main
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
   dummy := &ListNode{-1, head}
   front, back := dummy, dummy
-    asdf := "asdfasdfa"
-    if &asdf != nil {
-
-    }
 
   for front.Next != nil {
     if n <= 0 {

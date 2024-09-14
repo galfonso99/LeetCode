@@ -14,16 +14,16 @@ pub fn main () !void {
 pub fn findPivot (comptime x: usize) i32 {
     if (x == 1) {return 1;}
     var arr = [_]i32{0} ** x;
-    var n: usize = x;
+    const n: usize = x;
     var i: usize = 0;
     while (i < n) : (i += 1) {
         var prev: usize = i;
         if (i!=0) {prev = i - 1;} 
         const j = n-1-i; 
-        var front_val = arr[prev] + @truncate(i32, @as(i128, i))+1;
-        var end_val = arr[n-1-prev] + @truncate(i32, @as(i128, j))+1;
+        const front_val: i32 = arr[prev] + @as(i32, @as(i128, i))+1;
+        const end_val = arr[n-1-prev] + @as(i32, @as(i128, j))+1;
         if (front_val == arr[i]) {
-            return @truncate(i32, @as(i128, i)) + 1;
+            return @as(i32, @as(i128, i)) + 1;
         }
         arr[i] = front_val;
         if (arr[j] == 0) {
