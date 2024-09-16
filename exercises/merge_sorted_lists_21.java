@@ -12,16 +12,16 @@ class ListNode {
 
 public class merge_sorted_lists_21 {
     public static void main(String[] args) {
-        var sol = new Solution();
-        var list = new ListNode(1);
-        list.next = new ListNode(3);
-        list.next.next = new ListNode(6);
+        // var sol = new Solution();
+        // var list = new ListNode(1);
+        // list.next = new ListNode(3);
+        // list.next.next = new ListNode(6);
         // var res = sol.reverseList(list);
         // out.printf("The result is %d %n", res.val);
     }
 }
 
-class Solution {
+class Solution_21 {
     public ListNode mergeLists(ListNode l1, ListNode l2) {
         if (l1 == null) return l2;
         if (l2 == null) return l1;

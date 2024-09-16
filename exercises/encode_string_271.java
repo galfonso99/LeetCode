@@ -5,7 +5,7 @@ import java.util.ArrayList;
 // import java.util.Arrays;
 import java.lang.StringBuilder;
 
-class Solution {
+class Solution_271 {
     public String encode(String[] strs) {
         var builder = new StringBuilder();
         for (var s : strs) {

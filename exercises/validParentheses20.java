@@ -8,13 +8,13 @@ import java.util.ArrayList;
 
 public class validParentheses20 {
     public static void main(String[] args) {
-        var sol = new Solution();
-        var res = sol.isValid("(){}[]");
-        out.printf("The result is index1: %b %n", res);
+        // var sol = new Solution();
+        // var res = sol.isValid("(){}[]");
+        // out.printf("The result is index1: %b %n", res);
     }
 }
 
-class Solution {
+class Solution_20 {
     public boolean isValid(String s) {
         var stack = new ArrayList<Character>();
         for (char c : s.toCharArray()) {

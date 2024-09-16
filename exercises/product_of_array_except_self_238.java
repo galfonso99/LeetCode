@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 // More optimal solution
-class Solution {
+class Solution_238 {
     public static int[] productExceptSelf(int[] nums) {
         int n = nums.length;
         int[] ans = new int[n];

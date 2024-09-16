@@ -1,19 +1,18 @@
-import java.lang.Math;
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
+// class TreeNode {
+//     int val;
+//     TreeNode left;
+//     TreeNode right;
+//     TreeNode() {}
+//     TreeNode(int val) { this.val = val; }
+//     TreeNode(int val, TreeNode left, TreeNode right) {
+//         this.val = val;
+//         this.left = left;
+//         this.right = right;
+//     }
+// }
 public class balanced_tree_110 {
     public static void main(String[] args) {
-        var sol = new Solution();
+        // var sol = new Solution();
         // var tree1 = new TreeNode(1, new TreeNode(2), null);
         // var tree2 = new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5)), new TreeNode(3));
         // var res = sol.diameterOfBinaryTree(tree1);
@@ -21,7 +20,7 @@ public class balanced_tree_110 {
     }
 }
 // Optimal solution
-class Solution {
+class Solution_110 {
     public boolean isBalanced(TreeNode root) {
         if (root == null)  return true;
         boolean heightIsBalanced = Height(root) != -1;

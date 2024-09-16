@@ -1,25 +1,25 @@
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
+// class TreeNode {
+//     int val;
+//     TreeNode left;
+//     TreeNode right;
+//     TreeNode() {}
+//     TreeNode(int val) { this.val = val; }
+//     TreeNode(int val, TreeNode left, TreeNode right) {
+//         this.val = val;
+//         this.left = left;
+//         this.right = right;
+//     }
+// }
 public class same_tree_100 {
     public static void main(String[] args) {
-        var sol = new Solution();
-        var tree1 = new TreeNode(1, new TreeNode(2), new TreeNode(3));
-        var tree2 = new TreeNode(1, new TreeNode(2, new TreeNode(4), null), new TreeNode(3));
-        var res = sol.isSameTree(tree1, tree2);
-        System.out.printf("res: %b\n", res);
+        // var sol = new Solution();
+        // var tree1 = new TreeNode(1, new TreeNode(2), new TreeNode(3));
+        // var tree2 = new TreeNode(1, new TreeNode(2, new TreeNode(4), null), new TreeNode(3));
+        // var res = sol.isSameTree(tree1, tree2);
+        // System.out.printf("res: %b\n", res);
     }
 }
-class Solution {
+class Solution_100 {
     public boolean isSameTree(TreeNode a, TreeNode b) {
         if (a == null && b == null) return true;
         if (a == null || b == null) return false;

@@ -1,15 +1,13 @@
-import static java.lang.System.out;
-// import java.util.*;
 
 public class binarySearch704 {
     public static void main(String[] args) {
-        var sol = new Solution();
-        var res = sol.search(new int[] {1,2,3,4,5,6}, 4);
-        out.printf("The result is %d %n", res);
+        // var sol = new Solution();
+        // var res = sol.search(new int[] {1,2,3,4,5,6}, 4);
+        // out.printf("The result is %d %n", res);
     }
 }
 
-class Solution {
+class Solution_704 {
     public int search(int[] nums, int target) {
         return bs(nums, 0, nums.length - 1, target);
     }
