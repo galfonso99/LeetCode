@@ -8,7 +8,7 @@ import java.lang.Double;
 // return the lenght of stack
 
 // Original Solution
-class Solution {
+abstract class Solution {
     public int carFleet(int target, int[] position, int[] speed) {
         int n = position.length;
         double[][] pairs = new double[n][2];
