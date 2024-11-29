@@ -14,7 +14,7 @@ class Twitter {
         const res: number[] = []
 		const n = this.tweets.length
 		for (let i = 0; i < n; i++) {
-			let curr_id = this.tweets[n-1-i][0]
+			const curr_id = this.tweets[n-1-i][0]
 			if (curr_id === userId || ( this.follows.has(userId) 
 					&& this.follows.get(userId)!.has(curr_id)) ) {
 				res.push(this.tweets[n-1-i][1])
@@ -32,7 +32,7 @@ class Twitter {
     }
 
     unfollow(followerId: number, followeeId: number): void {
-       	if (this.follows.has(followerId) && this.follows.get(followerId)?.has(followeeId) {
+       	if (this.follows.has(followerId) && this.follows.get(followerId)?.has(followeeId)) {
 			this.follows.get(followerId)?.delete(followeeId)
 		}
     }
