@@ -31,4 +31,4 @@ trap :: proc(arr: []int) -> int {
 		}
 	}
 	return total
-}
+} 

@@ -44,30 +44,31 @@ class Solution {
 //        solve(root.right, ans, level + 1);
 //    }
 //}
+
 // Original solution using iteration like it was intended I think
-class Solution {
-    public List<List<Integer>> levelOrder(TreeNode root) {
-        if (root == null) return List.of();
-		Queue<TreeNode> queue = new LinkedList<>();
-		List<List<Integer>> ans = new ArrayList<List<Integer>>();
-		TreeNode leftmost_node = root;
-		queue.add(root);
-		while (!queue.isEmpty()) {
-			var node = queue.poll();
-            if (node == leftmost_node) {
-				ans.add(new LinkedList<Integer>());
-				leftmost_node = null;
-			}
-			ans.get(ans.size() - 1).add(node.val);
-			if (node.left != null) {
-                queue.add(node.left);
-                if (leftmost_node == null) leftmost_node = node.left;
-            }
-			if (node.right != null) {
-                queue.add(node.right);
-                if (leftmost_node == null) leftmost_node = node.right;
-            }
-		}
-		return ans;
-    }
-}
+//class Solution {
+//    public List<List<Integer>> levelOrder(TreeNode root) {
+//        if (root == null) return List.of();
+//		Queue<TreeNode> queue = new LinkedList<>();
+//		List<List<Integer>> ans = new ArrayList<List<Integer>>();
+//		TreeNode leftmost_node = root;
+//		queue.add(root);
+//		while (!queue.isEmpty()) {
+//			var node = queue.poll();
+//            if (node == leftmost_node) {
+//				ans.add(new LinkedList<Integer>());
+//				leftmost_node = null;
+//			}
+//			ans.get(ans.size() - 1).add(node.val);
+//			if (node.left != null) {
+//                queue.add(node.left);
+//                if (leftmost_node == null) leftmost_node = node.left;
+//            }
+//			if (node.right != null) {
+//                queue.add(node.right);
+//                if (leftmost_node == null) leftmost_node = node.right;
+//            }
+//		}
+//		return ans;
+//    }
+//}
