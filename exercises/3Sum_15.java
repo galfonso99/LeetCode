@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-
+i
 class Solution_2 {
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
