@@ -67,7 +67,7 @@ class Solution {
 //         if (memo[i][flag] != -1)
 //             return memo[i][flag];
 //         memo[i][flag] = Math.max(dfs(i + 1, flag, nums), 
-//                         nums[i] + dfs(i + 2, flag | (i == 0 ? 1 : 0), nums));
+//                         nums[i] + dfs(i + 2, flag, nums));
 //         return memo[i][flag];
 //     }
 // }
