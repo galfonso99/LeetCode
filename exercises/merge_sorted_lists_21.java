@@ -42,17 +42,32 @@ class Solution_21 {
 
     }
     
-		//   public ListNode mergeLists(ListNode l1, ListNode l2) {
-		//       if(l1 == null) return l2;
-		// if(l2 == null) return l1;
-		// if(l1.val < l2.val){
-		// 	l1.next = mergeLists(l1.next, l2);
-		// 	return l1;
-		// } else{
-		// 	l2.next = mergeLists(l1, l2.next);
-		// 	return l2;
-		// }
-		//   }
 
 }
 
+// Another way to solve it (maybe less elegant)
+// Just keep list1 as an in order merged list and only swap when list2 is less than list1
+// class Solution {
+//     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+//         if (list1 == null && list2 == null) return null;
+//         if (list1 == null) return list2;
+// 		if (list2 != null && list2.val < list1.val) {
+// 			var temp = list1;
+// 			list1 = list2;
+// 			list2 = temp;
+// 		}
+// 		var dummy = new ListNode(-1, list1);
+// 		while (list1 != null && list1.next != null && list2 != null) {
+// 			if (list2.val < list1.next.val) {
+// 				var temp = list1.next;
+// 				list1.next = list2;
+// 				list2 = temp;
+// 			} 
+// 			list1 = list1.next;
+// 		}
+// 		if (list2 != null && list1 != null) {
+// 			list1.next = list2;
+// 		}
+// 		return dummy.next;
+//     }
+// }
