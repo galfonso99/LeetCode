@@ -72,3 +72,45 @@ class DetectSquares {
 // 		return total_count;
 //     }
 // }
+
+// Slightly better, easier to read code improvement from the optimal solution
+// class CountSquares {
+//     private Map<Integer, Map<Integer, Integer>> ptsCount;
+//
+//     public CountSquares() {
+//         ptsCount = new HashMap<>();
+//     }
+//
+//     public void add(int[] point) {
+//         int x = point[0], y = point[1];
+//         ptsCount.putIfAbsent(x, new HashMap<>());
+//         ptsCount.get(x).put(y, get2D(ptsCount, x, y) + 1);
+//     }
+//
+//     public int count(int[] point) {
+//         int res = 0, x1 = point[0], y1 = point[1];
+//
+//         if (!ptsCount.containsKey(x1)) return res;
+//
+//         for (int y2 : ptsCount.get(x1).keySet()) {
+//             int side = y2 - y1;
+//             if (side == 0) continue;
+//
+//             int x3 = x1 + side, x4 = x1 - side;
+//             res += get2D(ptsCount, x1, y2) *
+//                    get2D(ptsCount, x3, y1) *
+//                    get2D(ptsCount, x3, y2);
+//
+//             res += get2D(ptsCount, x1, y2) *
+//                    get2D(ptsCount, x4, y1) *
+//                    get2D(ptsCount, x4, y2);
+//         }
+//
+//         return res;
+//     }
+//
+//     public int get2D(Map<Integer, Map<Integer, Integer>> map, int x, int y) {
+//         return map.getOrDefault(x, new HashMap<>()).getOrDefault(y, 0);
+//     }
+// }
+
